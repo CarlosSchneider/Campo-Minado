@@ -1,0 +1,39 @@
+name: campo_minado
+description: Campo Minado.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 1.0.0
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^0.1.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  assets:
+     - assets/images/alerta_0.jpeg
+     - assets/images/alerta_1.jpeg
+     - assets/images/alerta_2.jpeg
+     - assets/images/alerta_3.jpeg
+     - assets/images/alerta_4.jpeg
+     - assets/images/alerta_5.jpeg
+     - assets/images/alerta_6.jpeg
+     - assets/images/alerta_7.jpeg
+     - assets/images/alerta_8.jpeg
+     - assets/images/bandeira.jpeg
+     - assets/images/bomba.jpeg
+     - assets/images/bomba_detonada.jpeg
+     - assets/images/fechado.jpeg
+     - assets/icons/hard.png
+     - assets/icons/medium.png
+     - assets/icons/easy.png
+
