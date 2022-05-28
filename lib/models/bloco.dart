@@ -1,18 +1,16 @@
-import 'package:flutter/foundation.dart';
-
 class BlocoModel {
   final int linha;
   final int coluna;
   final List<BlocoModel> vizinhos = [];
 
-  bool _aberto;
-  bool _sinalizado;
-  bool _minado;
-  bool _detonado;
+  late bool _aberto;
+  late bool _sinalizado;
+  late bool _minado;
+  late bool _detonado;
 
   BlocoModel({
-    @required this.linha,
-    @required this.coluna,
+    required this.linha,
+    required this.coluna,
   }) {
     iniciar();
   }
@@ -22,37 +20,44 @@ class BlocoModel {
     _sinalizado = false;
     _minado = false;
     _detonado = false;
-  }  
+  }
 
   void adicionarVizinho(BlocoModel vizinho) {
     final deltaLinha = (linha - vizinho.linha).abs();
     final deltaColuna = (coluna - vizinho.coluna).abs();
-    
-    if(deltaLinha == 0 && deltaColuna == 0)
-      return;
 
-    if(deltaLinha <= 1 && deltaColuna <= 1)
+    if (deltaLinha == 0 && deltaColuna == 0) {
+      return;
+    }
+
+    if (deltaLinha <= 1 && deltaColuna <= 1) {
       vizinhos.add(vizinho);
+    }
   }
 
   void abrir() {
-    if(_aberto) 
+    if (_aberto) {
       return;
+    }
 
     _aberto = true;
 
-    if(_minado) {
+    if (_minado) {
       _detonado = true;
       return;
     }
 
-    if(vizinhancaLimpa)
-      vizinhos.forEach((element) => element.abrir());
+    if (vizinhancaLimpa) {
+      for (var element in vizinhos) {
+        element.abrir();
+      }
+    }
   }
 
   void refelarBomba() {
-    if(_minado && !_aberto) 
+    if (_minado && !_aberto) {
       _aberto = true;
+    }
   }
 
   void minar() {
@@ -77,7 +82,8 @@ class BlocoModel {
 
   bool get finalizado => resolvido || aberto;
 
-  bool get vizinhancaLimpa => vizinhos.every( (element) => !element._minado );
+  bool get vizinhancaLimpa => vizinhos.every((element) => !element._minado);
 
-  int get qtdeMinasNaVizinhanca => vizinhos.where((element) => element.minado).length;
+  int get qtdeMinasNaVizinhanca =>
+      vizinhos.where((element) => element.minado).length;
 }
