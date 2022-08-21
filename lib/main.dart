@@ -2,6 +2,5 @@ import 'package:flutter/material.dart';
 import 'package:campo_minado/ui/frmprincipal.dart';
 
 void main() {
-  runApp(CampoMinadoApp());
+  runApp(const CampoMinadoApp());
 }
-

@@ -1,0 +1,15 @@
+{
+    "recommendations": [
+        "dart-code.dart-code",
+        "dart-code.flutter",
+        "davidanson.vscode-markdownlint",
+        "hirantha.json-to-dart",
+        "vscode-icons-team.vscode-icons",
+        "felixangelov.bloc",
+        "hzgood.dart-data-class-generator",
+        "marufhassan.flutter-snippets",  // ou "alexisvt.flutter-snippets",
+        "donjayamanne.githistory",
+        "eamodio.gitlens",
+        "adelphes.android-dev-ext"
+    ]
+}
